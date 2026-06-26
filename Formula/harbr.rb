@@ -1,26 +1,26 @@
 class Harbr < Formula
   desc "Workspace-aware terminal project manager"
   homepage "https://github.com/dev-town/harbr"
-  version "0.1.0-beta.0"
+  version "0.1.0-beta.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.0/harbr-0.1.0-beta.0-darwin-arm64.tar.gz"
-      sha256 "51dd7bb143a7bb493d7caff0141b74c98a5575e32bbe66de6fd38810360922af"
+      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.1/harbr-0.1.0-beta.1-darwin-arm64.tar.gz"
+      sha256 "6e473968c08e283ad0bb27d987b5a1ddf955729e1fa3bedb03d7e6c516bcdefc"
     else
-      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.0/harbr-0.1.0-beta.0-darwin-x64.tar.gz"
-      sha256 "96c27a93f082aa8d9ed565569396d0b641eb228b025f681720c5f0285d369b30"
+      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.1/harbr-0.1.0-beta.1-darwin-x64.tar.gz"
+      sha256 "7d2b7cf10105e7cbc0a81fe352964915f27dab855f10fb529f549fcf11b72b8f"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.0/harbr-0.1.0-beta.0-linux-arm64.tar.gz"
-      sha256 "3cb9e45c6ed556cd56298482345f6c6b17194fac85c23916c51b89a364fc263d"
+      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.1/harbr-0.1.0-beta.1-linux-arm64.tar.gz"
+      sha256 "36fcd0a60044bbc5f37b5cb36fdbbc7837758785bc02e9a8788171ac64b4660b"
     else
-      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.0/harbr-0.1.0-beta.0-linux-x64.tar.gz"
-      sha256 "87f00aeb233a9e812f92dd6b6d447a75b20dd5937870fe107264f8e74c4e1f07"
+      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.1/harbr-0.1.0-beta.1-linux-x64.tar.gz"
+      sha256 "fb7d61b361d9f9ab12bebcec9be0cbdf2881192af68f05c0f53954e8d6a32197"
     end
   end
 
