@@ -1,26 +1,38 @@
 class Harbr < Formula
   desc "Workspace-aware terminal project manager"
   homepage "https://github.com/dev-town/harbr"
-  version "0.1.0-beta.2"
+  version "0.1.0-beta.3"
   license "MIT"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+(?:-[0-9A-Za-z.-]+)?)$/i)
+    strategy :github_releases do |json, regex|
+      json.filter_map do |release|
+        next if release["draft"]
+
+        release["tag_name"]&.[](regex, 1)
+      end
+    end
+  end
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.2/harbr-0.1.0-beta.2-darwin-arm64.tar.gz"
-      sha256 "cccf5b0ad4d5f6dd59f40de8f5cc8c4e77e26773bdd11cb873e95c4d58c740ed"
+      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.3/harbr-0.1.0-beta.3-darwin-arm64.tar.gz"
+      sha256 "d3ddb2807dedf9861e891ae8cf34d7547d66e906dd05770b2acc628a4291dc06"
     else
-      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.2/harbr-0.1.0-beta.2-darwin-x64.tar.gz"
-      sha256 "3bf1c85a271e3251a6ca5d1f632baca2b9fb18ff6285a46d8da32d2a940de58d"
+      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.3/harbr-0.1.0-beta.3-darwin-x64.tar.gz"
+      sha256 "c4a28550ac76f74a04b7dfbb59c598bb8657b66419a534fcd12ccd603e755914"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.2/harbr-0.1.0-beta.2-linux-arm64.tar.gz"
-      sha256 "c3bff4df4e4ae7e5e73c1d617d79e4f6fdb0661d0de581c57f3171dc719e8410"
+      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.3/harbr-0.1.0-beta.3-linux-arm64.tar.gz"
+      sha256 "133ad73adf0692c0f472a9405db85241dc1ee6cd189ed4ac68d2c3e7eca4529b"
     else
-      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.2/harbr-0.1.0-beta.2-linux-x64.tar.gz"
-      sha256 "4ddae937622c507ed6761f260beca9bbf5e389e2f1416c9ffdcf043703466318"
+      url "https://github.com/dev-town/harbr/releases/download/v0.1.0-beta.3/harbr-0.1.0-beta.3-linux-x64.tar.gz"
+      sha256 "97c99fc6cf642dfee6e176a6174ea4620458e971a0be02d9f4f19632e2aacfc9"
     end
   end
 
